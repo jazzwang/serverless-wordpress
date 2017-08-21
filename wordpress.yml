@@ -8,8 +8,8 @@ services:
       - 8080:80
     environment:
       WORDPRESS_DB_PASSWORD: example
-    volumes:
-      - ./www:/var/www/html
+#    volumes:
+#      - ./www:/var/www/html
 
   mysql:
     image: mysql:5.7
