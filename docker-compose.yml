@@ -18,4 +18,5 @@ services:
       MYSQL_ROOT_PASSWORD: example
     volumes:
       - ./mysql:/var/lib/mysql
+      - ./conf:/etc/mysql/conf.d
     restart: always
