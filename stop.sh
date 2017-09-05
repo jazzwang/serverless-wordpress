@@ -1,2 +1,2 @@
 #!/bin/bash
-docker-compose -f wordpress.yml stop
+docker-compose stop

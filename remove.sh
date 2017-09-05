@@ -1,2 +1,2 @@
 #!/bin/bash
-docker-compose -f wordpress.yml down
+docker-compose down
