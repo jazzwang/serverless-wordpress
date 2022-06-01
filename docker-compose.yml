@@ -4,19 +4,25 @@ services:
 
   wordpress:
     image: wordpress
+    restart: always
     ports:
       - 8081:80
     environment:
-      WORDPRESS_DB_PASSWORD: example
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: CHANGME
+      WORDPRESS_DB_NAME: wordpress
     volumes:
       - ./www:/var/www/html
-    restart: always
 
   mysql:
     image: mysql:5.7
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: CHANGME
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - ./mysql:/var/lib/mysql
       - ./conf:/etc/mysql/conf.d
-    restart: always
